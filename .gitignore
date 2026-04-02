@@ -1,0 +1,36 @@
+# Foundry
+contracts/out/
+contracts/cache/
+contracts/.env
+
+# Python
+engine/.venv/
+engine/__pycache__/
+engine/app/__pycache__/
+engine/app/routes/__pycache__/
+engine/app/quoters/__pycache__/
+engine/app/config/__pycache__/
+engine/tests/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+engine/.env
+engine/data/
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets — never commit these
+*.pem
+*.key
+.env
