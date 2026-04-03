@@ -4,6 +4,34 @@ DEX swap aggregator on Base. Quotes and executes token swaps across Uniswap v3 a
 
 **Spec repo**: https://github.com/Extracukor/dex-swap-aggregator-spec
 
+---
+
+## Jelenlegi állapot — 2026-04-03
+
+### Implementáció (Feature 001 — Core Swap Aggregation)
+
+| Fázis | Tartalom | Állapot |
+|-------|----------|---------|
+| Phase 1 — Setup | Monorepo struktúra, foundry.toml, pyproject.toml, railway.toml | ✅ Alap skeleton kész |
+| Phase 2 — Contracts | `AggregatorRouter.sol`, adapterek, fork tesztek | ⏳ Következő |
+| Phase 3 — Engine (US1 Quote) | FastAPI, quoters, `/v1/quote` endpoint | ❌ |
+| Phase 4 — Frontend (US2 Execute) | React swap UI, wagmi hooks | ❌ |
+| Phase 5 — Route Comparison (US3) | RouteComparison komponens | ❌ |
+| Phase 6 — Polish | Revenue monitoring, Railway/Cloudflare config, sign-off | ❌ |
+
+### CI/CD állapot
+
+| Komponens | CI | Deploy |
+|-----------|-----|--------|
+| Contracts | GitHub Actions (forge build + fork tests) | Manuális (`forge script`) |
+| Engine | GitHub Actions (pytest) | Railway (git push → auto-deploy) |
+| Frontend | GitHub Actions (pnpm build + tsc) | Cloudflare Pages (git push → auto-deploy) |
+
+> **Folytatáshoz**: Olvasd el a `specs/001-core-swap-aggregation/tasks.md`-t a spec repo-ban,
+> és folytatsd a Phase 2 taskoknál (T010 — `AggregatorRouter.sol`).
+
+---
+
 ## Repository Structure
 
 ```
